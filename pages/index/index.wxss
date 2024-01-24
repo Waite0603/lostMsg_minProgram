@@ -1,0 +1,124 @@
+.search {
+	height: 100rpx;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-input {
+	display: flex;
+	align-items: center;
+	height: 90rpx;
+	width: 90%;
+	background-color: #fff;
+	border-radius: 40px;
+	color: #ABABAB;
+}
+
+.search-content {
+	display: flex;
+}
+
+.search-content image {
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+.tab {
+	display: flex;
+	margin-left: 30rpx;
+	white-space: nowrap;
+}
+
+.tab-item {
+	background-color: #fff;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 40px;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.tab-item-active {
+	background-color: #B2A4EC;
+	color: #fff;
+}
+
+page {
+	padding: 10rpx;
+	padding-bottom: 140rpx;
+	box-sizing: border-box;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-left,
+.content-right {
+	width: 49%;
+}
+
+
+.content-item {
+	margin: 10rpx auto 20rpx;
+	background: #fff;
+	width: 98%;
+	border-radius: 20rpx;
+	overflow: hidden;
+}
+
+.content-item-img {
+	width: 100%;
+}
+
+.content-item-box {
+	font-size: 24rpx;
+	color: #333;
+	padding: 10rpx;
+	box-sizing: border-box;
+}
+
+.content-item-title {
+	/* 只显示一行，多行用...代替 */
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.content-item-name {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20rpx;
+	font-size: 22rpx;
+
+}
+
+.content-item-avatar {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	margin-right: 15rpx;
+}
+
+.content-item-heart {
+	color: #c4c4c4;
+	text-decoration: underline;
+	font-size: 20rpx;
+}
+
+.content-item-name {
+	margin-top: 10rpx;
+}
+
+.flex-row {
+	display: flex;
+}

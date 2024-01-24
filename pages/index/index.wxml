@@ -1,0 +1,45 @@
+<view class="body">
+	<view class="search">
+		<view class="search-input">
+			<view class="search-content">
+				<image src="../../images/search.png" mode="" />
+				<text>请输入物品名称</text>
+			</view>
+		</view>
+	</view>
+
+	<scroll-view class="tab" scroll-x>
+		<view class="tab-item {{ select !== index ? '' : 'tab-item-active'}}" wx:for="{{ tabList }}" wx:key="index" bind:tap="selectTab" data-id="{{ index }}">
+			<text>{{ item }}</text>
+		</view>
+	</scroll-view>
+
+	<view class="content">
+		<view class="content-left">
+			<block wx:for="{{list_water}}" wx:key="list_water">
+				<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 0}}"></template>
+			</block>
+		</view>
+		<view class="content-right">
+			<block wx:for="{{list_water}}" wx:key="list_water">
+				<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 1}}"></template>
+			</block>
+		</view>
+	</view>
+
+	<template name="item-data">
+		<view class="content-item">
+			<image src="{{url}}" class="content-item-img" mode="widthFix" />
+			<view class="content-item-box">
+				<view class="content-item-title">{{title}}</view>
+				<view class="content-item-name">
+					<view class="flex-row">
+						<image src="{{avatar}}" mode="aspectFill" class="content-item-avatar" />
+						<view class="content-item-name">{{name}}</view>
+					</view>
+					<view class="content-item-heart">{{price}}</view>
+				</view>
+			</view>
+		</view>
+	</template>
+</view>
