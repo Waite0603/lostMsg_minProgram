@@ -8,7 +8,7 @@
 		</view>
 	</view>
 
-	<scroll-view class="tab" scroll-x>
+	<scroll-view class="tab" scroll-x enable-flex>
 		<view class="tab-item {{ select !== index ? '' : 'tab-item-active'}}" wx:for="{{ tabList }}" wx:key="index" bind:tap="selectTab" data-id="{{ index }}">
 			<text>{{ item }}</text>
 		</view>

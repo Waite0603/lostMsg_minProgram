@@ -1,5 +1,5 @@
 .search {
-	height: 100rpx;
+	height: 50px;
 	margin-top: 10px;
 	display: flex;
 	align-items: center;
@@ -9,7 +9,7 @@
 .search-input {
 	display: flex;
 	align-items: center;
-	height: 90rpx;
+	height: 45px;
 	width: 90%;
 	background-color: #fff;
 	border-radius: 40px;
@@ -21,8 +21,8 @@
 }
 
 .search-content image {
-	width: 40rpx;
-	height: 40rpx;
+	width: 20px;
+	height: 20px;
 	margin-left: 20px;
 	margin-right: 10px;
 	margin-top: 2px;
@@ -30,7 +30,8 @@
 
 .tab {
 	display: flex;
-	margin-left: 30rpx;
+	height: 40px;
+	margin-left: 5%;
 	white-space: nowrap;
 }
 
