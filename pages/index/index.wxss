@@ -1,5 +1,5 @@
 .search {
-	height: 50px;
+	height: 100rpx;
 	margin-top: 10px;
 	display: flex;
 	align-items: center;
@@ -9,7 +9,7 @@
 .search-input {
 	display: flex;
 	align-items: center;
-	height: 45px;
+	height: 90rpx;
 	width: 90%;
 	background-color: #fff;
 	border-radius: 40px;
@@ -18,29 +18,30 @@
 
 .search-content {
 	display: flex;
+	font-size: 28rpx;
 }
 
 .search-content image {
-	width: 20px;
-	height: 20px;
-	margin-left: 20px;
-	margin-right: 10px;
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 20rpx;
+	margin-right: 10rpx;
 	margin-top: 2px;
 }
 
 .tab {
 	display: flex;
-	height: 40px;
+	height: 70rpx;
 	margin-left: 5%;
 	white-space: nowrap;
 }
 
 .tab-item {
 	background-color: #fff;
-	margin: 5px;
-	padding: 5px;
+	margin: 10rpx;
+	padding: 10rpx;
 	border-radius: 40px;
-	font-size: 14px;
+	font-size: 26rpx;
 	display: inline-block;
 }
 
