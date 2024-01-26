@@ -30,24 +30,10 @@
 }
 
 .tab {
-	display: flex;
-	height: 70rpx;
-	margin-left: 5%;
-	white-space: nowrap;
-}
-
-.tab-item {
-	background-color: #fff;
-	margin: 10rpx;
-	padding: 10rpx;
-	border-radius: 40px;
-	font-size: 26rpx;
-	display: inline-block;
-}
-
-.tab-item-active {
-	background-color: #B2A4EC;
-	color: #fff;
+	--td-tab-item-tag-bg: #fff;
+	--td-tab-nav-bg-color: #f3f3f3;
+	--td-tab-item-tag-active-bg: #B2A4EC;
+	--td-tab-item-active-color: #fff;
 }
 
 page {

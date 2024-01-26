@@ -40,8 +40,7 @@
     "navigationBarTitleText": "失物招领",
     "navigationBarBackgroundColor": "#B2A4EC"
   },
-  "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+	"lazyCodeLoading": "requiredComponents"
 }

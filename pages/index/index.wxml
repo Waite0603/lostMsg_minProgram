@@ -8,11 +8,9 @@
 		</view>
 	</view>
 
-	<scroll-view class="tab" scroll-x enable-flex>
-		<view class="tab-item {{ select !== index ? '' : 'tab-item-active'}}" wx:for="{{ tabList }}" wx:key="index" bind:tap="selectTab" data-id="{{ index }}">
-			<text>{{ item }}</text>
-		</view>
-	</scroll-view>
+	<t-tabs defaultValue="{{0}}" theme="tag" space-evenly="{{false}}" class="tab" bind:change="changeTab">
+		<t-tab-panel wx:for="{{tabList}}" wx:key="index" label="{{item}}" value="{{index}}" />
+	</t-tabs>
 
 	<view class="content">
 		<view class="content-left">

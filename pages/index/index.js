@@ -66,11 +66,8 @@ Page({
     ]
 	},
 
-	selectTab(e) {
-		const { id } = e.currentTarget.dataset;
-		this.setData({
-			select: id
-		})
+	changeTab(value) {
+		console.log(value.detail);
 	},
 
 	/**
