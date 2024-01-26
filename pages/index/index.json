@@ -1,5 +1,8 @@
 {
 	"usingComponents": {
+		"search-input": "../../components/SearchInput/SearchInput",
+		"view-card": "../../components/ViewCard/ViewCard",
+		"footer-content": "../../components/FooterContent/FooterContent",
 		"t-tabs": "tdesign-miniprogram/tabs/tabs",
 		"t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
 	}

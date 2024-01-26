@@ -5,8 +5,7 @@ Page({
 	 */
 	data: {
 		tabList: ['找主人', '寻物品'],
-		select: 0,
-		list_water:[
+		listImage:[
       {
         name:'AI动画',
         price:'1w+/部',

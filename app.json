@@ -4,10 +4,11 @@
     "pages/classify/classify",
     "pages/collection/collection",
     "pages/me/me",
-    "custom-tab-bar/index"
+    "custom-tab-bar/index",
+    "components/SearchInput/SearchInput"
   ],
   "tabBar": {
-		"custom": true,
+    "custom": true,
     "list": [
       {
         "iconPath": "images/index.png",
@@ -39,8 +40,8 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "失物招领",
     "navigationBarBackgroundColor": "#B2A4EC"
-  },
+	},
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-	"lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents"
 }

@@ -1,43 +1,11 @@
 <view class="body">
-	<view class="search">
-		<view class="search-input">
-			<view class="search-content">
-				<image src="../../images/search.png" mode="" />
-				<text>请输入物品名称</text>
-			</view>
-		</view>
-	</view>
+	<search-input></search-input>
 
 	<t-tabs defaultValue="{{0}}" theme="tag" space-evenly="{{false}}" class="tab" bind:change="changeTab">
 		<t-tab-panel wx:for="{{tabList}}" wx:key="index" label="{{item}}" value="{{index}}" />
 	</t-tabs>
 
-	<view class="content">
-		<view class="content-left">
-			<block wx:for="{{list_water}}" wx:key="list_water">
-				<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 0}}"></template>
-			</block>
-		</view>
-		<view class="content-right">
-			<block wx:for="{{list_water}}" wx:key="list_water">
-				<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 1}}"></template>
-			</block>
-		</view>
-	</view>
+	<view-card listImage="{{ listImage }}"></view-card>
 
-	<template name="item-data">
-		<view class="content-item">
-			<image src="{{url}}" class="content-item-img" mode="widthFix" />
-			<view class="content-item-box">
-				<view class="content-item-title">{{title}}</view>
-				<view class="content-item-name">
-					<view class="flex-row">
-						<image src="{{avatar}}" mode="aspectFill" class="content-item-avatar" />
-						<view class="content-item-name">{{name}}</view>
-					</view>
-					<view class="content-item-heart">{{price}}</view>
-				</view>
-			</view>
-		</view>
-	</template>
+	<footer-content></footer-content>
 </view>

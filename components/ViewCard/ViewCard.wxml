@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="content-left">
+    <block wx:for="{{listImage}}" wx:key="listImage">
+      <template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 0}}"></template>
+    </block>
+  </view>
+  <view class="content-right">
+    <block wx:for="{{listImage}}" wx:key="listImage">
+      <template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 1}}"></template>
+    </block>
+  </view>
+</view>
+
+<template name="item-data">
+  <view class="content-item">
+    <image src="{{url}}" class="content-item-img" mode="widthFix" />
+    <view class="content-item-box">
+      <view class="content-item-title">{{title}}</view>
+      <view class="content-item-name">
+        <view class="flex-row">
+          <image src="{{avatar}}" mode="aspectFill" class="content-item-avatar" />
+          <view class="content-item-name">{{name}}</view>
+        </view>
+        <view class="content-item-heart">{{price}}</view>
+      </view>
+    </view>
+  </view>
+</template>
