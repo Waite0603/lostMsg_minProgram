@@ -1,6 +1,7 @@
 .content{
   display: flex;
-  justify-content: space-between;
+	justify-content: space-between;
+	min-height: 1000rpx;
 }
 
 .content-left,.content-right{
