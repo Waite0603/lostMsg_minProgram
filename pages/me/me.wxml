@@ -1,2 +1,6 @@
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="body">
+	<view class="unlogin">
+		<image class="unlogin-image" src="../../images/me.png" mode="" />
+		<button class="unlogin-btn" hover-class="unlogin-btn-active" bindtap="getUserProfile"> 获取头像昵称 </button>
+	</view>
+</view>

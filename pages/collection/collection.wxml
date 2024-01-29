@@ -1,2 +1,9 @@
-<!--pages/collection/collection.wxml-->
-<text>pages/collection/collection.wxml</text>
+<view class="body">
+	<t-tabs defaultValue="{{0}}" theme="tag" space-evenly="{{false}}" class="tab" bind:change="changeTab">
+		<t-tab-panel wx:for="{{tabList}}" wx:key="index" label="{{item}}" value="{{index}}" />
+	</t-tabs>
+
+	<view-card listImage="{{ listImage }}"></view-card>
+
+	<footer-content></footer-content>
+</view>

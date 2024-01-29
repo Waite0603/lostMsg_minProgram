@@ -10,3 +10,7 @@ page {
 	padding-bottom: 140rpx;
 	box-sizing: border-box;
 }
+
+.content {
+	min-height: 1000rpx;
+}

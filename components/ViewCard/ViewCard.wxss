@@ -1,13 +1,11 @@
 .content{
   display: flex;
 	justify-content: space-between;
-	min-height: 1000rpx;
 }
 
 .content-left,.content-right{
   width: 49%;
 }
-
 
 .content-item{
   margin: 10rpx auto 20rpx;
