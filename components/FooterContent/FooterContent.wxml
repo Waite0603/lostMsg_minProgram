@@ -1,1 +1,1 @@
-<t-footer text="{{text}}" style="margin-bottom: 60rpx;"></t-footer>
+<t-footer text="{{text}}" style="margin-bottom: 40rpx;"></t-footer>

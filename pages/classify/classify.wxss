@@ -3,7 +3,7 @@
 }
 
 .side-bar-wrapper {
-	max-height: 1200rpx;
+	padding-bottom: 100rpx;
 }
 
 page {

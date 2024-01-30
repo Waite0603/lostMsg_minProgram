@@ -5,7 +5,29 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		login: false,
+		userInfo: {
+			avatarUrl: '',
+			nickName: ''
+		},
+		cellList: [
+			{
+				url: '../../images/publish.png',
+				text: '我的发布'
+			},
+			{
+				url: '../../images/collection1.png',
+				text: '我的收藏'
+			},
+			{
+				url: '../../images/info.png',
+				text: '我的信息'
+			},
+			{
+				url: '../../images/quit.png',
+				text: '退出登录'
+			}
+		]
 	},
 
 	// 调用登录接口
@@ -16,7 +38,16 @@ Page({
 			desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
 			success: (res) => {
 				console.log(res);
-				wx.setStorageSync('key', res);
+				const { userInfo: { avatarUrl, nickName } } = res;
+				const userInfo = {
+					avatarUrl,
+					nickName
+				};
+				wx.setStorageSync('userInfo', userInfo);
+				wx.setStorageSync('login', true);
+				this.setData({
+					login: true
+				});
 			}
 		})
 	},
@@ -25,7 +56,17 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-
+		const login = wx.getStorageSync('login');
+		const userInfo = wx.getStorageSync('userInfo');
+		if (userInfo) {
+			this.setData ({
+				userInfo: userInfo
+			});
+		};
+		// 无论什么类型, !! 返回一定是 Boolean 类型
+		this.setData({
+			login: !!login
+		});
 	},
 
 	/**
@@ -44,7 +85,6 @@ Page({
 				select: 4
 			})
 		}
-		this.onLoad();
 	},
 
 	/**
