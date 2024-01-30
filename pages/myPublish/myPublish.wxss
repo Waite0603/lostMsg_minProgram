@@ -1,0 +1,16 @@
+.tab {
+	--td-tab-item-tag-bg: #fff;
+	--td-tab-nav-bg-color: #f3f3f3;
+	--td-tab-item-tag-active-bg: #B2A4EC;
+	--td-tab-item-active-color: #fff;
+}
+
+page {
+	padding: 10rpx;
+	padding-bottom: 140rpx;
+	box-sizing: border-box;
+}
+
+.content {
+	min-height: 1100rpx;
+}

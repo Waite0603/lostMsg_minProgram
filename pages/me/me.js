@@ -7,25 +7,28 @@ Page({
 	data: {
 		login: false,
 		userInfo: {
-			avatarUrl: '',
-			nickName: ''
+			avatarUrl: "",
+			nickName: ""
 		},
 		cellList: [
 			{
-				url: '../../images/publish.png',
-				text: '我的发布'
+				url: "../../images/publish.png",
+				text: "我的发布",
+				src: "../myPublish/myPublish"
 			},
 			{
-				url: '../../images/collection1.png',
-				text: '我的收藏'
+				url: "../../images/collection1.png",
+				text: "我的收藏",
+				src: "../collection/collection"
 			},
 			{
-				url: '../../images/info.png',
-				text: '我的信息'
+				url: "../../images/info.png",
+				text: "我的信息",
+				src: "../myInfo/myInfo"
 			},
 			{
-				url: '../../images/quit.png',
-				text: '退出登录'
+				url: "../../images/quit.png",
+				text: "退出登录"
 			}
 		]
 	},
@@ -35,7 +38,7 @@ Page({
 		// 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
 		// 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
 		wx.getUserProfile({
-			desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+			desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
 			success: (res) => {
 				console.log(res);
 				const { userInfo: { avatarUrl, nickName } } = res;
@@ -43,8 +46,8 @@ Page({
 					avatarUrl,
 					nickName
 				};
-				wx.setStorageSync('userInfo', userInfo);
-				wx.setStorageSync('login', true);
+				wx.setStorageSync("userInfo", userInfo);
+				wx.setStorageSync("login", true);
 				this.setData({
 					login: true
 				});
@@ -52,14 +55,27 @@ Page({
 		})
 	},
 
+	toCell(e) {
+		const { page } = e.currentTarget.dataset;
+		if (page === "../collection/collection") {
+			wx.switchTab({
+				url: page
+			})
+		}
+		else {
+			wx.navigateTo({
+				url: page
+			});
+		}
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-		const login = wx.getStorageSync('login');
-		const userInfo = wx.getStorageSync('userInfo');
+		const login = wx.getStorageSync("login");
+		const userInfo = wx.getStorageSync("userInfo");
 		if (userInfo) {
-			this.setData ({
+			this.setData({
 				userInfo: userInfo
 			});
 		};
@@ -80,7 +96,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow() {
-		if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+		if (typeof this.getTabBar === "function" && this.getTabBar()) {
 			this.getTabBar().setData({
 				select: 4
 			})

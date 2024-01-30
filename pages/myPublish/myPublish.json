@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"view-card": "../../components/ViewCard/ViewCard",
+		"t-tabs": "tdesign-miniprogram/tabs/tabs",
+		"t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+	}
+}

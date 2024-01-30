@@ -5,7 +5,9 @@
     "pages/collection/collection",
     "pages/me/me",
     "custom-tab-bar/index",
-    "components/SearchInput/SearchInput"
+    "components/SearchInput/SearchInput",
+    "pages/myPublish/myPublish",
+    "pages/myInfo/myInfo"
   ],
   "tabBar": {
     "custom": true,
@@ -40,7 +42,7 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "失物招领",
     "navigationBarBackgroundColor": "#B2A4EC"
-	},
+  },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
