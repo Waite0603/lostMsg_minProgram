@@ -59,7 +59,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-		const { avatarUrl, nickName, phone } = wx.getStorageSync('userInfo');
+		let { avatarUrl, nickName, phone } = wx.getStorageSync('userInfo');
 		if (!phone) {
 			phone = '';
 		};
