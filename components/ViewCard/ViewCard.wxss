@@ -57,9 +57,9 @@
   font-size: 20rpx;
 }
 .content-item-name{
-  margin-top: 10rpx;
+  margin-top: 8rpx;
 }
 
 .flex-row{
-  display: flex;
+	display: flex;
 }

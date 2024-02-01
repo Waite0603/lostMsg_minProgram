@@ -7,7 +7,8 @@
     "custom-tab-bar/index",
     "components/SearchInput/SearchInput",
     "pages/myPublish/myPublish",
-    "pages/myInfo/myInfo"
+    "pages/myInfo/myInfo",
+    "pages/infoDetail/infoDetail"
   ],
   "tabBar": {
     "custom": true,

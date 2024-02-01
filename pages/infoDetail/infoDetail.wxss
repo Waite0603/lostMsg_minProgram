@@ -1,0 +1,110 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20rpx;
+}
+
+.lose-img {
+	width: 95%;
+	background-color: #e2dada;
+	border-radius: 20rpx;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 38rpx;
+	padding: 30rpx 10rpx;
+}
+
+.title .avatar {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}
+
+.title .person {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-weight: normal;
+	font-size: 30rpx;
+}
+
+.container {
+	background-color: #fff;
+	padding: 10rpx;
+	margin: 20rpx;
+	border-radius: 20rpx;
+	box-shadow: 5rpx 5rpx 5rpx #E2DADA;
+	font-size: 30rpx;
+	word-break:break-all;
+}
+
+.container .item {
+	padding: 20rpx;
+	display: flex;
+	align-items: center;
+}
+
+.container .item .label {
+	width: 70rpx;
+	color: #999999;
+	font-size: 26rpx;
+	margin-right: 20rpx;
+}
+
+.content {
+	position: relative;
+	padding-bottom: 150rpx;
+}
+
+.bottom {
+	display: flex;
+	background-color: #fff;
+	margin: 10rpx 20rpx;
+	border-radius: 20rpx;
+	justify-content: space-between;
+	margin-top: 20rpx;
+	padding: 20rpx 30rpx;
+	box-sizing: border-box;
+	position: absolute;
+	width: 95%;
+	bottom: 20rpx;
+	position: fixed;
+	bottom: 20rpx;
+}
+
+.bottom .bottom-left {
+	display: flex;
+	align-items: center;
+	background-color: #f3f3f3;
+	border-radius: 30rpx;
+	width: 60%;
+	color: #999999;
+}
+
+.bottom .bottom-left .icon-comment {
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 20rpx;
+	margin-right: 10rpx;
+}
+
+.bottom .bottom-right .icon-collection {
+	width: 40rpx;
+	height: 40rpx;
+}
+
+.bottom .bottom-right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.content {
+	position: relative;
+	padding-bottom: 150rpx;
+}

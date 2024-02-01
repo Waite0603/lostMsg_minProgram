@@ -1,0 +1,38 @@
+<!--pages/infoDetail/infoDetail.wxml-->
+<view class="content">
+	<image class="lose-img" src="{{ dataArr.image }}" mode="aspectFit" />
+
+	<view class="container">
+		<view class="title">
+			<text>{{ dataArr.title }}</text>
+			<view class="person">
+				<image class="avatar" src="{{ dataArr.avatar }}" mode="" />
+				<text>{{ dataArr.name }}</text>
+			</view>
+		</view>
+		<view class="date item">
+			<text class="label">拾到时间</text>
+			<text>2024-01-08</text>
+		</view>
+		<view class="region item">
+			<text class="label">拾到地点</text>
+			<text>新疆工业大学</text>
+		</view>
+		<view class="region item">
+			<text class="label">状态</text>
+			<text>已找回</text>
+		</view>
+		<view class="desc item">{{ dataArr.title }}</view>
+	</view>
+
+	<view class="bottom">
+			<view class="bottom-left">
+				<image class="icon-comment" src="../../images/comment.png" mode=""/>
+				<text>点击联系我</text>
+			</view>
+			<view class="bottom-right">
+				<image class="icon-collection" src="../../images/collection1.png" mode=""/>
+				<text>收藏</text>
+			</view>
+	</view>
+</view>
