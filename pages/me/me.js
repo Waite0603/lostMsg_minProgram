@@ -40,7 +40,6 @@ Page({
 		wx.getUserProfile({
 			desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
 			success: (res) => {
-				console.log(res);
 				const { userInfo: { avatarUrl, nickName } } = res;
 				const userInfo = {
 					avatarUrl,
@@ -49,7 +48,11 @@ Page({
 				wx.setStorageSync("userInfo", userInfo);
 				wx.setStorageSync("login", true);
 				this.setData({
-					login: true
+					login: true,
+					userInfo: {
+						avatarUrl,
+						nickName
+					}
 				});
 			}
 		})
@@ -57,15 +60,36 @@ Page({
 
 	toCell(e) {
 		const { page } = e.currentTarget.dataset;
-		if (page === "../collection/collection") {
-			wx.switchTab({
-				url: page
-			})
+		if (page) {
+			if (page === "../collection/collection") {
+				wx.switchTab({
+					url: page
+				})
+			}
+			else {
+				wx.navigateTo({
+					url: page
+				});
+			}
 		}
 		else {
-			wx.navigateTo({
-				url: page
-			});
+			wx.showModal({
+				title: '提示',
+				content: '是否退出登录',
+				complete: (res) => {
+					if (res.cancel) {
+					}
+					if (res.confirm) {
+						wx.removeStorage({
+							key: 'userInfo',
+						});
+						wx.setStorageSync('login', false);
+					};
+					this.setData({
+						login: false
+					});
+				}
+			})
 		}
 	},
 	/**
