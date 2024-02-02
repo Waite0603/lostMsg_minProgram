@@ -8,7 +8,8 @@
     "components/SearchInput/SearchInput",
     "pages/myPublish/myPublish",
     "pages/myInfo/myInfo",
-    "pages/infoDetail/infoDetail"
+    "pages/infoDetail/infoDetail",
+    "pages/search/search"
   ],
   "tabBar": {
     "custom": true,

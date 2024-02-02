@@ -1,5 +1,5 @@
 <view class="search">
-	<view class="search-input">
+	<view class="search-input" bind:tap="toSearch">
 		<view class="search-content">
 			<image class="search-image" src="../../images/search.png" mode="" />
 			<text>请输入物品名称</text>
