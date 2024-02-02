@@ -98,7 +98,7 @@
 	height: 40rpx;
 }
 
-.bottom .bottom-right {
+.bottom .bottom-right .collect {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

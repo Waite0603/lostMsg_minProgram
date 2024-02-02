@@ -1,12 +1,38 @@
-// pages/infoDetail/infoDetail.js
+import Message from 'tdesign-miniprogram/message/index';
+
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		dataArr: {}
+		dataArr: {},
+		collected: false
+	},
 
+	// 点击联系我事件
+	onContactTap() {
+		wx.setClipboardData({
+			data: this.data.dataArr.title.toString(),
+			success(res) {
+				// 禁用系统默认弹窗
+				wx.hideToast();
+				Message.success({
+					context: this,
+					offset: [20, 32],
+					duration: 5000,
+					content: '联系方式复制成功',
+				});
+			}
+		})
+
+	},
+
+	// 收藏功能
+	onCollectionTap() {
+		this.setData({
+			collected: !this.data.collected
+		});
 	},
 
 	/**
@@ -17,8 +43,6 @@ Page({
 		this.setData({
 			dataArr: opt
 		});
-		console.log(opt);
-
 	},
 
 	/**

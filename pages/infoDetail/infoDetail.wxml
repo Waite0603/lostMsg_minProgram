@@ -1,4 +1,5 @@
-<!--pages/infoDetail/infoDetail.wxml-->
+<t-message id="t-message"></t-message>
+
 <view class="content">
 	<image class="lose-img" src="{{ dataArr.image }}" mode="aspectFit" />
 
@@ -26,13 +27,19 @@
 	</view>
 
 	<view class="bottom">
-			<view class="bottom-left">
-				<image class="icon-comment" src="../../images/comment.png" mode=""/>
-				<text>点击联系我</text>
+		<view class="bottom-left" bind:tap="onContactTap">
+			<image class="icon-comment" src="../../images/comment.png" mode="" />
+			<text>点击联系我</text>
+		</view>
+		<view class="bottom-right">
+			<view class="collect" wx:if="{{collected}}" catchtap="onCollectionTap">
+				<image class="icon-collection" src="../../images/collection1_fill.png" mode="" />
+				<text>已收藏</text>
 			</view>
-			<view class="bottom-right">
-				<image class="icon-collection" src="../../images/collection1.png" mode=""/>
+			<view class="collect" wx:else="{{collected}}" catchtap="onCollectionTap">
+				<image class="icon-collection" src="../../images/collection1.png" mode="" />
 				<text>收藏</text>
 			</view>
+		</view>
 	</view>
 </view>
