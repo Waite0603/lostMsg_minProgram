@@ -1,0 +1,39 @@
+<view class="header">
+	失物招领
+</view>
+
+<view class="body">
+	<view class="tab">
+		<view class="tab-item">
+			<view class="tab-item-right">
+				<image class="icon" src="../../images/publish.png" mode=""/>
+			</view>
+			<view class="tab-item-left">
+				<text>寻物启事</text>
+				<button class="tab-button">发布</button>
+			</view>
+		</view>
+		<view class="tab-item">
+			<view class="tab-item-right">
+				<image class="icon" src="../../images/classify_fill.png" mode=""/>
+			</view>
+			<view class="tab-item-left">
+				<text>失物招领</text>
+				<button class="tab-button">发布</button>
+			</view>
+		</view>
+	</view>
+
+	<view class="new-message">
+		<view class="title">
+		<image class="icon" src="../../images/collection1_fill.png" mode=""/>
+			最新通告
+		</view>
+		<view class="message">
+			<view class="message-item" wx:for="{{ newMessage }}" wx:key="newMessage">
+				<image class="icon" src="../../images/collection1_fill.png" mode=""/>
+				{{ item }}
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,95 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #B2A4EC;
+	height: 200rpx;
+	border-radius: 0 0 80rpx 80rpx;
+	box-shadow: 4rpx 4rpx 8rpx #8888;
+
+	color: #fff;
+	font-size: 60rpx;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.tab {
+	display: flex;
+	height: 200rpx;
+	margin-top: 40rpx;
+	padding: 0 30rpx;
+}
+
+.tab .tab-item:first-child {
+	margin-right: 30rpx;
+}
+
+.tab-item {
+	padding: 40rpx 0;
+	border-radius: 20rpx;
+	display: flex;
+	width: 50%;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #fff;
+	color: #B2A4EC;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.tab-item .icon {
+	height: 80rpx;
+	width: 80rpx;
+	margin-right: 40rpx;
+}
+
+.tab-item .tab-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20rpx;
+	border-radius: 30rpx;
+	background-color: #B2A4EC;
+
+	height: 60rpx;
+	font-size: 34rpx;
+	color: #fff;
+
+}
+
+.new-message {
+	padding: 30rpx;
+	font-size: 36rpx;
+}
+
+.new-message .title {
+	display: flex;
+	align-items: center;
+	color: #3f2899;
+	font-weight: bold;
+}
+
+.new-message .title .icon {
+	height: 40rpx;
+	width: 40rpx;	
+	margin-right: 10rpx;
+}
+
+.new-message .message {
+	margin-top: 30rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+}
+
+.new-message .message .message-item {
+	display: flex;
+	align-items: center;
+	padding: 30rpx;
+	font-size: 34rpx;
+}
+
+.new-message .message .message-item .icon {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 10rpx;
+}

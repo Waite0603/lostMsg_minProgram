@@ -45,6 +45,11 @@ Component({
 					url: page,
 				})
 			}
+			else {
+				wx.navigateTo({
+					url: '../../pages/publish/publish',
+				})
+			}
 			this.setData({
         select: index
       })
