@@ -65,7 +65,7 @@
 .new-message .title {
 	display: flex;
 	align-items: center;
-	color: #3f2899;
+	color: #B2A4EC;
 	font-weight: bold;
 }
 

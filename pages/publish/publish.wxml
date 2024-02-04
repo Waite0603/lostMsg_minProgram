@@ -4,7 +4,7 @@
 
 <view class="body">
 	<view class="tab">
-		<view class="tab-item">
+		<view class="tab-item" bind:tap="toSearch">
 			<view class="tab-item-right">
 				<image class="icon" src="../../images/publish.png" mode=""/>
 			</view>
@@ -13,7 +13,7 @@
 				<button class="tab-button">发布</button>
 			</view>
 		</view>
-		<view class="tab-item">
+		<view class="tab-item" bind:tap="toLost">
 			<view class="tab-item-right">
 				<image class="icon" src="../../images/classify_fill.png" mode=""/>
 			</view>

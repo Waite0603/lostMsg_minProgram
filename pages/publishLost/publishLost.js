@@ -1,33 +1,13 @@
-// pages/publish/publish.js
+// pages/publishLost/publishLost.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-		newMessage: [
-			"捡到一个水平",
-			"江苏医科大学",
-			"江苏理工大学",
-			"青海医科大学",
-			"捡到一个水平",
-			"江苏医科大学",
-			"江苏理工大学",
-			"青海医科大学"
-		]
+
   },
 
-	toSearch() {
-		wx.navigateTo({
-			url: '../../pages/publishSearch/publishSearch',
-		})
-	},
-
-	toLost() {
-		wx.navigateTo({
-			url: '../../pages/publishLost/publishLost',
-		})
-	},
   /**
    * 生命周期函数--监听页面加载
    */

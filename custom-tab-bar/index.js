@@ -45,7 +45,7 @@ Component({
 					url: page,
 				})
 			}
-			else {
+			if (type === 1) {
 				wx.navigateTo({
 					url: '../../pages/publish/publish',
 				})

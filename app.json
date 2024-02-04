@@ -10,7 +10,9 @@
     "pages/myInfo/myInfo",
     "pages/infoDetail/infoDetail",
     "pages/search/search",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/publishSearch/publishSearch",
+    "pages/publishLost/publishLost"
   ],
   "tabBar": {
     "custom": true,
@@ -42,7 +44,7 @@
     ]
   },
   "window": {
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "失物招领",
     "navigationBarBackgroundColor": "#B2A4EC"
   },
