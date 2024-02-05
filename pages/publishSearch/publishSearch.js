@@ -1,3 +1,8 @@
+import Message from 'tdesign-miniprogram/message/index';
+import {
+	uploadImg
+} from '../../api/publish'
+
 const areaData = {
 	areaList: [
 		{
@@ -121,18 +126,23 @@ Page({
 	 */
 	data: {
 		options: areaData.areaList,
-		note: "请选择物品",
 		visible: false,
 		mode: '',
 		datetimeVisible: false,
 		datetime: new Date('2024-01-01').getTime(),
-		datetimeText: '',
+		note: "请选择物品",
+		name: "",
+		location: "",
+		content: "",
+		datetimeText: '请选择时间',
+		desc: "",
+		fileList: []
 	},
 
+	// 物品类别选择
 	showCascader() {
 		this.setData({ visible: true });
 	},
-
 	onChange(e) {
 		const { selectedOptions } = e.detail;
 
@@ -140,7 +150,7 @@ Page({
 			note: selectedOptions.map((item) => item.label).join("/"),
 		});
 	},
-
+	// 时间选择器
 	showPicker(e) {
 		const { mode } = e?.currentTarget?.dataset;
 		this.setData({
@@ -165,6 +175,78 @@ Page({
 
 		this.hidePicker();
 	},
+
+	// 图片上传
+	handleImgUpload(e) {
+		console.log(e);
+		const { fileList } = this.data;
+		const { files } = e.detail;
+		this.setData({
+			fileList: [...fileList, ...files], // 此时设置了 fileList 之后才会展示选择的图片
+		});
+	},
+	handleRemove(e) {
+		const { index } = e.detail;
+		const { fileList } = this.data;
+
+		fileList.splice(index, 1);
+		this.setData({
+			fileList,
+		});
+	},
+
+	// 获取数据
+	getName(e) {
+		this.setData({
+			name: e.detail.value
+		})
+	},
+	getLocation(e) {
+		this.setData({
+			location: e.detail.value
+		})
+	},
+	getContent(e) {
+		this.setData({
+			content: e.detail.value
+		})
+	},
+	getDesc(e) {
+		this.setData({
+			desc: e.detail.value
+		})
+	},
+
+
+	// 提交表单
+	onSubmit(e) {
+		const { note, name, location, content, datetimeText, desc } = this.data;
+		if (note === "请选择物品" || datetimeText === "请选择时间") {
+			console.log(this.data.fileList);
+			Message.error({
+				context: this,
+				offset: [20, 32],
+				duration: 2000,
+				content: '请检查内容是否填写完整'
+			});
+
+			return;
+		}
+
+		if (!name || !location || !content || !desc) {
+			Message.error({
+				context: this,
+				offset: [20, 32],
+				duration: 2000,
+				content: '请检查内容是否填写完整'
+			});
+
+			return;
+		}
+
+		console.log(note, name, location, content, datetimeText, desc);
+	},
+
 
 	/**
 	 * 生命周期函数--监听页面加载

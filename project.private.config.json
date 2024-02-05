@@ -3,7 +3,8 @@
   "projectname": "lostMsg",
   "setting": {
     "compileHotReLoad": true,
-    "bigPackageSizeSupport": true
+    "bigPackageSizeSupport": true,
+    "urlCheck": false
   },
   "libVersion": "2.16.1",
   "condition": {
