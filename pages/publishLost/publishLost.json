@@ -7,5 +7,6 @@
 		"t-textarea": "tdesign-miniprogram/textarea/textarea",
 		"t-message": "tdesign-miniprogram/message/message",
 		"t-upload": "tdesign-miniprogram/upload/upload"
-	}
+	},
+	"navigationBarTitleText": "发布-失物招领"
 }
