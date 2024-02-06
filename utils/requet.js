@@ -1,6 +1,6 @@
 // ----http----
 // baseURL
-const baseUrl = "https://waite.kele.plus";
+const baseUrl = "http://waite.kele.plus";
 // 封装微信请求方法
 const request = (params) => {
 	let url = params.url;
@@ -21,32 +21,33 @@ const request = (params) => {
 			data: data, // 请求参数
 			header: header, // 头部
 			success(res) {
+				resolve(res);
 				// 判断状态码，此处和后端约定好
-				if (res.statusCode == 200) {
-					if (res.data.Code === 20000) {
-						resolve(res.data);
-					} else {
-						reject(res.data)
-					}
+				// if (res.statusCode == 200) {
+				// 	if (res.data.Code === 20000) {
+				// 		resolve(res.data);
+				// 	} else {
+				// 		reject(res.data)
+				// 	}
 
-				} else {
-					// 其他异常
-					switch (res.statusCode) {
-						case 404:
-							wx.showToast({
-								title: '未知异常',
-								duration: 2000,
-							})
-							break;
-						default:
-							wx.showToast({
-								title: '请重试...',
-								duration: 2000,
-							})
-							break;
-					}
-					reject("未知错误,请稍后再试");
-				}
+				// } else {
+				// 	// 其他异常
+				// 	switch (res.statusCode) {
+				// 		case 404:
+				// 			wx.showToast({
+				// 				title: '未知异常',
+				// 				duration: 2000,
+				// 			})
+				// 			break;
+				// 		default:
+				// 			wx.showToast({
+				// 				title: '请重试...',
+				// 				duration: 2000,
+				// 			})
+				// 			break;
+				// 	}
+				// 	reject("未知错误,请稍后再试");
+				// }
 			},
 			fail(err) {
 				console.log(err);

@@ -1,1 +1,12 @@
-/* pages/publishLost/publishLost.wxss */
+.image-upload {
+	background-color: #fff;
+	padding: 30rpx;
+}
+
+.t-upload {
+	margin-top: 20rpx;
+}
+
+.image-upload .text-upload {
+	font-size: 32rpx;
+}

@@ -1,7 +1,10 @@
-import Message from 'tdesign-miniprogram/message/index';
+import Message from "tdesign-miniprogram/message/index";
 import {
-	uploadImg
-} from '../../api/publish'
+	publishSearchFrom
+} from "../../api/publish";
+import {
+	baseUrl
+} from "../../utils/requet";
 
 const areaData = {
 	areaList: [
@@ -127,16 +130,18 @@ Page({
 	data: {
 		options: areaData.areaList,
 		visible: false,
-		mode: '',
+		mode: "",
 		datetimeVisible: false,
-		datetime: new Date('2024-01-01').getTime(),
+		datetime: new Date("2024-01-01").getTime(),
 		note: "请选择物品",
 		name: "",
 		location: "",
 		content: "",
-		datetimeText: '请选择时间',
+		datetimeText: "请选择时间",
 		desc: "",
-		fileList: []
+		imgUrl: "",
+		fileList: [],
+		submiting: false
 	},
 
 	// 物品类别选择
@@ -178,11 +183,36 @@ Page({
 
 	// 图片上传
 	handleImgUpload(e) {
-		console.log(e);
 		const { fileList } = this.data;
 		const { files } = e.detail;
+		const { length } = fileList;
 		this.setData({
 			fileList: [...fileList, ...files], // 此时设置了 fileList 之后才会展示选择的图片
+		});
+
+		const task = wx.uploadFile({
+			url: baseUrl + "/uploadImg",
+			filePath: e.detail.files[0].url,
+			name: "file",
+			success: (res) => {
+				const data = JSON.parse(res["data"]);
+				const imgUrl = baseUrl + `/file/${data[0]["filename"]}`;
+				this.setData({
+					[`fileList[${length}].status`]: 'done',
+					imgUrl: imgUrl
+				});
+			},
+			fail: (error) => {
+
+			}
+		});
+
+		// 显示长传进度
+
+		task.onProgressUpdate((res) => {
+			this.setData({
+				[`fileList[${length}].percent`]: res.progress,
+			});
 		});
 	},
 	handleRemove(e) {
@@ -220,31 +250,94 @@ Page({
 
 	// 提交表单
 	onSubmit(e) {
-		const { note, name, location, content, datetimeText, desc } = this.data;
+		const { submiting, note, name, location, content, datetimeText, desc, imgUrl } = this.data;
+
 		if (note === "请选择物品" || datetimeText === "请选择时间") {
-			console.log(this.data.fileList);
 			Message.error({
 				context: this,
 				offset: [20, 32],
 				duration: 2000,
-				content: '请检查内容是否填写完整'
+				content: "请检查内容是否填写完整"
 			});
 
 			return;
-		}
+		};
 
 		if (!name || !location || !content || !desc) {
 			Message.error({
 				context: this,
 				offset: [20, 32],
 				duration: 2000,
-				content: '请检查内容是否填写完整'
+				content: "请检查内容是否填写完整"
+			});
+
+			return;
+		};
+
+		if (!imgUrl) {
+			Message.error({
+				context: this,
+				offset: [20, 32],
+				duration: 2000,
+				content: "请检查图片是否上传"
 			});
 
 			return;
 		}
 
-		console.log(note, name, location, content, datetimeText, desc);
+		if (submiting) {
+			Message.error({
+				context: this,
+				offset: [20, 32],
+				duration: 2000,
+				content: "请不要重复提交"
+			});
+
+			return ;
+		};
+
+		// 准备上传表单
+		this.setData ({
+			submiting: true
+		});
+
+		const regex = /([^\/]+)\/(.*)/;
+		const multiArray = note.match(regex);
+		const params = {
+			openid: wx.getStorageSync('openId'),
+			type: 0,
+			classify1: multiArray[1],
+			classify2: multiArray[2],
+			name: name,
+			date: datetimeText,
+			region: location,
+			phone: content,
+			desc: desc,
+			imgList: imgUrl,
+			time: new Date().getTime()
+		};
+
+		publishSearchFrom(params).then(res => {
+			if (res["data"] === "success") {
+				wx.switchTab({
+					url: '../index/index',
+					success: () => {
+						wx.showToast({
+							icon: 'none',
+							title: '发布成功!',
+						})
+					}
+				})
+			} else {
+				wx.showToast({
+					title: '修改失败!',
+					icon: 'none'
+				})
+			}
+		});
+		this.setData ({
+			submiting: false
+		});
 	},
 
 
