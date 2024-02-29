@@ -1,6 +1,6 @@
 // ----http----
 // baseURL
-const baseUrl = "http://waite.kele.plus";
+const baseUrl = "http://127.0.0.1:30001";
 // 封装微信请求方法
 const request = (params) => {
 	let url = params.url;

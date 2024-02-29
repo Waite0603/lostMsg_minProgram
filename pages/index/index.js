@@ -1,3 +1,7 @@
+import {
+	getLose
+} from "../../api/lose";
+
 Page({
 
 	/**
@@ -5,54 +9,34 @@ Page({
 	 */
 	data: {
 		tabList: ['找主人', '寻物品'],
-		listImage: [
-			{
-				name: 'AI动画',
-				price: '2024-01-08',
-				title: '灯塔',
-				url: '/images/water_pic/000ac34008b0ba4c.jpg',
-				avatar: '/images/water_pic/000ac34008b0ba4c.jpg',
-			},
-			{
-				name: '宣传片',
-				price: '2024-01-08',
-				title: '捡到一个城堡',
-				url: '/images/water_pic/000b42cae15622e0.jpg',
-				avatar: '/images/water_pic/000b42cae15622e0.jpg',
-			},
-			{
-				name: '123',
-				price: '2024-01-08',
-				title: '丢失两只狗狗',
-				url: '/images/water_pic/000acf666d991c39.jpg',
-				avatar: '/images/water_pic/000acf666d991c39.jpg',
-			},
-			{
-				name: '访谈',
-				price: '2024-01-08',
-				title: '捡到手机两部',
-				url: '/images/water_pic/000ad20b5e452b24.jpg',
-				avatar: '/images/water_pic/000ad20b5e452b24.jpg',
-			},
-			{
-				name: '场景建模类',
-				price: '2024-01-08',
-				title: '某某石化加工厂模型',
-				url: '/images/water_pic/000ad6c520be9ec5.jpg',
-				avatar: '/images/water_pic/000ad6c520be9ec5.jpg',
-			},
-			{
-				name: '校园拍摄',
-				price: '2024-01-08',
-				title: '情侣/闺蜜/对象写真艺术照',
-				url: '/images/water_pic/000ad6fa67b5ad96.jpg',
-				avatar: '/images/water_pic/000ad6fa67b5ad96.jpg',
-			},
-		]
+		listImage: [],
+		tabSelect: 0
+	},
+
+	async getLoseList(type) {
+		const loseData = await getLose(type);
+		let loseDataList = [];
+		// 重构返回值
+		loseData.data.forEach(element => {
+			let loseDataItem = {
+				name: `${element["classify2"]}`,
+				price: `${element["date"].split(' ')[0]}`,
+				title: `${element["name"]}`,
+				url: `${element["imgList"][0]}`,
+				avatar: `${element["imgList"][0]}`
+			};
+			loseDataList.push(loseDataItem);
+		});
+		this.setData({
+			listImage: loseDataList
+		});
 	},
 
 	changeTab(value) {
-		console.log(value.detail);
+		this.getLoseList(value.detail.value);
+		this.setData({
+			tabSelect: value.detail.value
+		});
 	},
 
 	toDetail(e) {
@@ -63,7 +47,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getLoseList(this.data.tabSelect);
 	},
 
 	/**
