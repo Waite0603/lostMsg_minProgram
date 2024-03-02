@@ -21,7 +21,7 @@ Component({
 	 */
 	methods: {
 		toDetail(e) {
-			let data = e.currentTarget.dataset;
+			let data = e.currentTarget.dataset.msg;
 			wx.navigateTo({
 				url: '../../pages/infoDetail/infoDetail?data=' + JSON.stringify(data),
 			})

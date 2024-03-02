@@ -1,4 +1,9 @@
-import Message from 'tdesign-miniprogram/message/index';
+import Message from "tdesign-miniprogram/message/index";
+import {
+	collectItem, cancelCollection, checkCollection
+} from "../../api/lose";
+
+const openId = wx.getStorageSync("openId");
 
 Page({
 
@@ -13,7 +18,7 @@ Page({
 	// 点击联系我事件
 	onContactTap() {
 		wx.setClipboardData({
-			data: this.data.dataArr.title.toString(),
+			data: this.data.dataArr.phone.toString(),
 			success(res) {
 				// 禁用系统默认弹窗
 				wx.hideToast();
@@ -25,11 +30,15 @@ Page({
 				});
 			}
 		})
-
 	},
 
 	// 收藏功能
 	onCollectionTap() {
+		if (!this.data.collected) {
+			collectItem(this.data.dataArr.id, openId);
+		} else {
+			cancelCollection(this.data.dataArr.id, openId);
+		}
 		this.setData({
 			collected: !this.data.collected
 		});
@@ -38,8 +47,15 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad(options) {
+	async onLoad(options) {
 		let opt = JSON.parse(options.data);
+		const res = await checkCollection(opt.id, openId);
+		console.log(res.data === []);
+		if (res.data.length !== 0) {
+			this.setData({
+				collected: true
+			});
+		};
 		this.setData({
 			dataArr: opt
 		});

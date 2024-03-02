@@ -1,27 +1,27 @@
 <view class="content">
 	<view class="content-left">
 		<block wx:for="{{listImage}}" wx:key="listImage">
-			<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 0}}"></template>
+			<template is='item-data' data="{{item}}" wx:if="{{index % 2 == 0}}"></template>
 		</block>
 	</view>
 	<view class="content-right">
 		<block wx:for="{{listImage}}" wx:key="listImage">
-			<template is='item-data' data="{{...item}}" wx:if="{{index % 2 == 1}}"></template>
+			<template is='item-data' data="{{item}}" wx:if="{{index % 2 == 1}}"></template>
 		</block>
 	</view>
 </view>
 
 <template name="item-data">
-	<view class="content-item" bind:tap="toDetail" data-avatar="{{avatar}}" data-image="{{url}}" data-title="{{title}}" data-name="{{name}}">
-		<image src="{{url}}" class="content-item-img" mode="widthFix" />
+	<view class="content-item" bind:tap="toDetail" data-msg="{{item}}">
+		<image src="{{item.url}}" class="content-item-img" mode="widthFix" />
 		<view class="content-item-box">
-			<view class="content-item-title">{{title}}</view>
+			<view class="content-item-title">{{item.title}}</view>
 			<view class="content-item-name">
 				<view class="flex-row">
-					<image src="{{avatar}}" mode="aspectFill" class="content-item-avatar" />
-					<view class="content-item-name">{{name}}</view>
+					<image src="{{item.avatar}}" mode="aspectFill" class="content-item-avatar" />
+					<view class="content-item-name">{{item.name}}</view>
 				</view>
-				<view class="content-item-heart">{{price}}</view>
+				<view class="content-item-heart">{{item.price}}</view>
 			</view>
 		</view>
 	</view>

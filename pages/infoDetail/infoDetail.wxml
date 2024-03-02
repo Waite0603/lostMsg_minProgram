@@ -1,7 +1,7 @@
 <t-message id="t-message"></t-message>
 
 <view class="content">
-	<image class="lose-img" src="{{ dataArr.image }}" mode="aspectFit" />
+	<image class="lose-img" src="{{ dataArr.url }}" mode="aspectFit" />
 
 	<view class="container">
 		<view class="title">
@@ -13,17 +13,17 @@
 		</view>
 		<view class="date item">
 			<text class="label">拾到时间</text>
-			<text>2024-01-08</text>
+			<text>{{ dataArr.date }}</text>
 		</view>
 		<view class="region item">
 			<text class="label">拾到地点</text>
-			<text>新疆工业大学</text>
+			<text>{{ dataArr.region }}</text>
 		</view>
 		<view class="region item">
 			<text class="label">状态</text>
-			<text>已找回</text>
+			<text>{{ dataArr.state === "0" ? "未找回" : "已找回" }}</text>
 		</view>
-		<view class="desc item">{{ dataArr.title }}</view>
+		<view class="desc item">{{ dataArr.desc }}</view>
 	</view>
 
 	<view class="bottom">

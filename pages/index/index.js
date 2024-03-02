@@ -18,12 +18,20 @@ Page({
 		let loseDataList = [];
 		// 重构返回值
 		loseData.data.forEach(element => {
+			console.log(element);
 			let loseDataItem = {
+				id: `${element["_id"]}`,
 				name: `${element["classify2"]}`,
 				price: `${element["date"].split(' ')[0]}`,
 				title: `${element["name"]}`,
 				url: `${element["imgList"][0]}`,
-				avatar: `${element["imgList"][0]}`
+				avatar: `${element["imgList"][0]}`,
+				phone: `${element["phone"]}`,
+				openid: `${element["openid"]}`,
+				desc: `${element["desc"]}`,
+				date: `${element["date"]}`,
+				region: `${element["region"]}`,
+				state: `${element["state"]}`
 			};
 			loseDataList.push(loseDataItem);
 		});
