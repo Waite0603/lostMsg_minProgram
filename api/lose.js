@@ -1,5 +1,5 @@
 import {
-  request
+	request
 } from "../utils/requet";
 
 // 获取主页数据
@@ -38,7 +38,7 @@ export const cancelCollection = (id, openId) => {
 	});
 };
 
-// checkCollection
+// 查看收藏物品
 export const checkCollection = (id, openId) => {
 	return request({
 		url: "/checkCollection",
@@ -47,5 +47,29 @@ export const checkCollection = (id, openId) => {
 			openid: openId
 		},
 		method: "POST"
+	});
+};
+
+// 查看收藏夹内容
+export const getCollectLose = (openId, type) => {
+	return request({
+		url: "/getCollection",
+		data: {
+			openid: openId,
+			type: type
+		},
+		method: "POST"
+	});
+};
+
+// 查看我的发布内容
+export const getMyPublish = (openId, type) => {
+	return request({
+		url: "/getMyPublish",
+		data: {
+			openid: openId,
+			type: type
+		},
+		method: "GET"
 	});
 };

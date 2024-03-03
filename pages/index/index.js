@@ -18,7 +18,6 @@ Page({
 		let loseDataList = [];
 		// 重构返回值
 		loseData.data.forEach(element => {
-			console.log(element);
 			let loseDataItem = {
 				id: `${element["_id"]}`,
 				name: `${element["classify2"]}`,
