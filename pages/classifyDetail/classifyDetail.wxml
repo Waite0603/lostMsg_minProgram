@@ -1,0 +1,29 @@
+<view wx:if="{{loading === 0}}" class="loading">
+	<t-loading theme="spinner" size="80rpx" text="加载中" layout="vertical" class="wrapper" />
+</view>
+
+<view wx:if="{{loading === 1}}" class="lose-body">
+	<view class="lose-item" wx:for="{{dataArr}}" wx:key="dataArr" bind:tap="toDetail" data-msg="{{item}}">
+		<view class="tag">
+			<text wx:if="{{ item.state !== '2' }}">{{ item.type === "0" ? "寻物启事" : "失物招领" }}</text>
+			<text wx:else style="color: beige;">✔️已找回</text>
+		</view>
+		<image class="lose-item-image" src="{{item.url}}"></image>
+		<view class="lose-content">
+			<text class="name">{{item.title}}</text>
+			<text class="region">{{item.classify}}</text>
+			<text class="date">{{item.date}}</text>
+			<text class="desc">{{item.desc}}</text>
+			<view class="lose-content-right">
+				<image src="{{item.userAvatar}}" mode="aspectFill" class="content-item-avatar" />
+				<text class="content-item-username">{{item.username}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view wx:else class="loading">
+	<t-result theme="default" t-class-image="external-class-image" title="暂时找不到数据">
+	</t-result>
+	<button style="margin-top: 40rpx;" bind:tap="backTo">点击返回</button>
+</view>

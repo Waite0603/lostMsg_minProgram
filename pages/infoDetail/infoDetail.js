@@ -50,7 +50,6 @@ Page({
 	async onLoad(options) {
 		let opt = JSON.parse(options.data);
 		const res = await checkCollection(opt.id, openId);
-		console.log(res.data === []);
 		if (res.data.length !== 0) {
 			this.setData({
 				collected: true

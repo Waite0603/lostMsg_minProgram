@@ -1,0 +1,98 @@
+.loading {
+	height: 1000rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lose-item {
+	position: relative;
+	display: flex;
+	padding: 20rpx;
+	margin: 20rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+}
+
+.lose-item .tag {
+	position: absolute;
+	padding: 0 20rpx;
+	top: -10rpx;
+	right: 0;
+	color:#fff;
+	background: #B2A4EC;
+	text-align: center;
+	border-radius: 10rpx;
+	font-size: 26rpx;
+}
+
+.lose-item .lose-item-image {
+	width: 250rpx;
+	height: 250rpx;
+	min-width: 250rpx;
+	border-radius: 20rpx;
+}
+
+.lose-content {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10rpx;
+	width: 100%;
+}
+
+.lose-content .name {
+	font-weight: bold;
+}
+
+.lose-content .region {
+	margin-top: 35rpx;
+}
+
+.lose-content .region,
+.date,
+.desc {
+	font-size: 26rpx;
+	margin-bottom: 5rpx;
+}
+
+.lose-content .desc {
+	max-width: 400rpx;
+	color: #666;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.lose-content .lose-content-right {
+	display: flex;
+	align-content: space-between;
+	margin-left: auto;
+}
+
+.lose-content .content-item-avatar {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}
+
+.lose-content .content-item-username {
+	margin-top: 6rpx;
+	color: #666;
+	font-size: 28rpx;
+}
+
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .4);
+	color: #fff;
+	font-size: 50rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

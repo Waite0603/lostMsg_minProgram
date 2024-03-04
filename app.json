@@ -12,7 +12,8 @@
     "pages/search/search",
     "pages/publish/publish",
     "pages/publishSearch/publishSearch",
-    "pages/publishLost/publishLost"
+    "pages/publishLost/publishLost",
+    "pages/classifyDetail/classifyDetail"
   ],
   "tabBar": {
     "custom": true,

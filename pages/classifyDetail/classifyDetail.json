@@ -1,0 +1,6 @@
+{
+	"usingComponents": {
+		"t-loading": "tdesign-miniprogram/loading/loading",
+		"t-result": "tdesign-miniprogram/result/result"
+	}
+}

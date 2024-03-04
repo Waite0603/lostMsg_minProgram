@@ -41,7 +41,6 @@
   justify-content: space-between;
   margin-top:20rpx ;
   font-size: 22rpx;
- 
 }
 
 .content-item-avatar{

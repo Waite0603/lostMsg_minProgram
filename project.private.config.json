@@ -6,10 +6,24 @@
     "bigPackageSizeSupport": true,
     "urlCheck": false
   },
-  "libVersion": "2.16.1",
+  "libVersion": "2.15.0",
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "pages/classifyDetail/classifyDetail",
+          "pathName": "pages/classifyDetail/classifyDetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/classify",
+          "pathName": "pages/classify/classify",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/publish/publish",
           "pathName": "pages/publishSearch/publishSearch",

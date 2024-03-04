@@ -6,8 +6,8 @@ import {
 	baseUrl
 } from "../../utils/requet";
 
-const areaData = {
-	areaList: [
+const classifyData = {
+	classifyList: [
 		{
 			label: "卡片、证件类",
 			value: "卡片、证件类",
@@ -118,7 +118,6 @@ const areaData = {
 				{ value: "其它", label: "其它" },
 			],
 		}
-
 	],
 };
 
@@ -128,7 +127,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		options: areaData.areaList,
+		options: classifyData.classifyList,
 		visible: false,
 		mode: "",
 		datetimeVisible: false,

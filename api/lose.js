@@ -73,3 +73,15 @@ export const getMyPublish = (openId, type) => {
 		method: "GET"
 	});
 };
+
+// 根据分类获取数据
+export const getClassify = (type, classify) => {
+	return request({
+		url: '/getClassifyTwo',
+		data: {
+			type: type,
+			classify2: classify
+		},
+		method: "POST"
+	});
+};
