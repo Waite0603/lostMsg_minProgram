@@ -18,8 +18,8 @@
 			<view class="content-item-title">{{item.title}}</view>
 			<view class="content-item-name">
 				<view class="flex-row">
-					<image src="{{item.avatar}}" mode="aspectFill" class="content-item-avatar" />
-					<view class="content-item-name">{{item.name}}</view>
+					<image src="{{item.userAvatar}}" mode="aspectFill" class="content-item-avatar" />
+					<view class="content-item-name">{{item.username}}</view>
 				</view>
 				<view class="content-item-heart">{{item.price}}</view>
 			</view>

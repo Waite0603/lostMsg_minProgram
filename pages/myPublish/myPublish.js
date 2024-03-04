@@ -21,10 +21,11 @@ Page({
 		let publishDataList = [];
 		// 重构返回值
 		publishData.data.forEach(element => {
-			console.log(element);
 			let loseDataItem = {
+				username: `${element["username"]}`,
+				userAvatar: `${element["userAvatar"]}`,
 				id: `${element["_id"]}`,
-				name: `${element["classify2"]}`,
+				type: `${element["classify1"]}-${element["classify2"]}`,
 				price: `${element["date"].split(' ')[0]}`,
 				title: `${element["name"]}`,
 				url: `${element["imgList"][0]}`,

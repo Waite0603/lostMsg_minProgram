@@ -7,8 +7,8 @@
 		<view class="title">
 			<text>{{ dataArr.title }}</text>
 			<view class="person">
-				<image class="avatar" src="{{ dataArr.avatar }}" mode="" />
-				<text>{{ dataArr.name }}</text>
+				<image class="avatar" src="{{ dataArr.userAvatar }}" mode="" />
+				<text>{{ dataArr.username }}</text>
 			</view>
 		</view>
 		<view class="date item">
@@ -18,6 +18,10 @@
 		<view class="region item">
 			<text class="label">拾到地点</text>
 			<text>{{ dataArr.region }}</text>
+		</view>
+		<view class="region item">
+			<text class="label">类型</text>
+			<text>{{ dataArr.type }}</text>
 		</view>
 		<view class="region item">
 			<text class="label">状态</text>

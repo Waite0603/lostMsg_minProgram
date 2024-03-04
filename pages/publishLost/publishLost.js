@@ -300,11 +300,15 @@ Page({
 		this.setData ({
 			submiting: true
 		});
-
+				
+		const username = wx.getStorageSync("userInfo").nickName;
+		const userAvatar = wx.getStorageSync("userInfo").avatarUrl;
 		const regex = /([^\/]+)\/(.*)/;
 		const multiArray = note.match(regex);
 		const params = {
 			openid: wx.getStorageSync('openId'),
+			username: username,
+			userAvatar: userAvatar,
 			type: 1,
 			classify1: multiArray[1],
 			classify2: multiArray[2],
