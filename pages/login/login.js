@@ -1,28 +1,13 @@
-// pages/publish/publish.js
+// pages/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-		newMessage: [
-			"文件上传组件上传异常",
-			"文件上传组件上传异常",
-			"文件上传组件上传异常"
-		]
-  },
+	data() {
 
-	toSearch() {
-		wx.navigateTo({
-			url: '../../pages/publishSearch/publishSearch',
-		})
 	},
 
-	toLost() {
-		wx.navigateTo({
-			url: '../../pages/publishLost/publishLost',
-		})
-	},
   /**
    * 生命周期函数--监听页面加载
    */

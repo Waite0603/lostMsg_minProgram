@@ -32,7 +32,7 @@
 		<view class="message">
 			<view class="message-item" wx:for="{{ newMessage }}" wx:key="newMessage">
 				<image class="icon" src="../../images/collection1_fill.png" mode=""/>
-				{{ item }}
+				<text class="msg">{{ item }}</text>
 			</view>
 		</view>
 	</view>

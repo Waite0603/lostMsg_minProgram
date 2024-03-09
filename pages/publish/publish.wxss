@@ -93,3 +93,9 @@
 	height: 40rpx;
 	margin-right: 10rpx;
 }
+
+.new-message .message .message-item .msg {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

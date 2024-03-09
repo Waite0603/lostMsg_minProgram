@@ -1,0 +1,25 @@
+<view class="body">
+	<view class="title">
+		<text class="welcome">登录 \n</text>
+		<text class="msg">欢迎来到失物招领小程序, 请使用账号密码登录</text>
+	</view>
+
+	<view class="from">
+		<input class="from-item" type="text" placeholder="请输入账号" />
+		<input class="from-item" type="password" placeholder="请输入密码" />
+
+		<button class="btn-login" hover-class="btn-login-hover">确定</button>
+
+		<navigator url="/page/navigate/navigate?title=navigate" class="navigator" hover-class="navigator-hover">没有账号?点击注册</navigator>
+	</view>
+
+  <view class="wave">
+    <view class="wave-before"></view>
+    <view class="wave-after"></view>
+  </view>
+	
+	<view class="wave-fill"></view>
+
+
+
+</view>
