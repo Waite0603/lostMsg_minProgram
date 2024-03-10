@@ -10,10 +10,11 @@ const request = (params) => {
 		"Content-Type": "application/json"
 	};
 
-	if (wx.getStorageSync("token")) {
+	if (wx.getStorageSync("openId")) {
 		// token或者Authorization
-		header.token = wx.getStorageSync("token");
-	}
+		header["token"] = encodeURIComponent(wx.getStorageSync("openId"));
+	};
+
 	return new Promise((resolve, reject) => {
 		wx.request({
 			url: baseUrl + url, // api url

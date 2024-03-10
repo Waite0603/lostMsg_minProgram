@@ -1,0 +1,33 @@
+<t-message id="t-message" />
+
+<view class="body">
+	<view class="title"  style="white-space:pre-wrap">
+		<text class="welcome">注册</text>
+	</view>
+	<text class="msg">欢迎来到失物招领小程序, 请使用账号密码登录</text>
+
+	<view class="from">
+		<view class="choose-avatar">
+			<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+				<image class="avatar" src="{{avatarUrl}}"></image>
+			</button>
+			<text class="choose-title">请选择头像</text>
+		</view>
+
+		<input class="from-item" type="nickname" placeholder="请输入用户名" bindinput="getNickName" bindblur="getNickName" />
+		<input class="from-item" type="text" placeholder="请输入账号" bindinput="getUserName" />
+		<input class="from-item" type="password" placeholder="请输入密码" bindinput="getPassword" />
+		<input class="from-item" type="password" placeholder="请确认密码" bindinput="getPassword2" />
+
+
+		<button class="btn-login" hover-class="btn-login-hover" bind:tap="handRegister">注册</button>
+	</view>
+
+	<view class="wave">
+		<view class="wave-before"></view>
+		<view class="wave-after"></view>
+	</view>
+
+	<view class="wave-fill"></view>
+
+</view>

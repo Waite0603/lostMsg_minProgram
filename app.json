@@ -14,7 +14,8 @@
     "pages/publishSearch/publishSearch",
     "pages/publishLost/publishLost",
     "pages/classifyDetail/classifyDetail",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/register/register"
   ],
   "tabBar": {
     "custom": true,
@@ -52,5 +53,8 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+	"lazyCodeLoading": "requiredComponents",
+	"useExtendedLib": {
+    "weui": true
+  }
 }

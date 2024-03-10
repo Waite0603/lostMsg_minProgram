@@ -4,7 +4,7 @@ page {
 
 .body {
   display: flex;
-  flex-direction: column;
+	flex-direction: column;
   height: 100vh;
 }
 
@@ -17,10 +17,9 @@ page {
 	padding-bottom: 20rpx;
 }
 
-.title-msg {
+.msg {
 	padding: 0 40rpx;
 	font-size: 26rpx;
-	line-height: 60rpx;
 	color: #888888;
 }
 
@@ -28,6 +27,32 @@ page {
 	display: flex;
 	flex-direction: column;
 	padding: 40rpx;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 120rpx;
+  border-radius: 16rpx;
+}
+
+.avatar {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.from .choose-avatar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.from .choose-avatar .choose-title {
+	font-size: 28rpx;
+	color: #888888;
+	margin-top: 10rpx;
 }
 
 .from .from-item {
@@ -57,6 +82,7 @@ page {
 	text-align: center;
 	color: rgb(24, 24, 153);
 }
+
 .navigator-hover {
 	background-color: #fff;
   color:#B2A4EC;
