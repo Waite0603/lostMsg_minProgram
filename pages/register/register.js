@@ -14,7 +14,8 @@ Page({
 		nickName: "",
 		userName: "",
 		password: "",
-		password2: ""
+		password2: "",
+		submited: false
 	},
 
 	onChooseAvatar(e) {
@@ -22,8 +23,6 @@ Page({
 		this.setData({
 			avatarUrl,
 		});
-
-		console.log(avatarUrl);
 	},
 
 	// 数据绑定
@@ -53,13 +52,25 @@ Page({
 
 
 	async handRegister() {
-		const { avatarUrl, nickName, userName, password, password2 } = this.data;
+		const { avatarUrl, nickName, userName, password, password2, submited } = this.data;
+
+		if (submited) {
+			return;
+		};
+
+		this.setData({
+			submited: true
+		});
 		if (!avatarUrl || !nickName || !userName || !password || !password2) {
 			Message.warning({
 				context: this,
 				offset: [20, 32],
 				duration: 5000,
 				content: '请注意消息是否填充完整!',
+			});
+
+			this.setData({
+				submited: false
 			});
 
 			return;
@@ -73,6 +84,9 @@ Page({
 				content: '两次密码不相同!',
 			});
 
+			this.setData({
+				submited: false
+			});
 			return;
 		};
 
@@ -85,8 +99,7 @@ Page({
 		}
 
 		const res = await register(data);
-		console.log(res);
-		
+
 		if (res.data.hasOwnProperty("openid")) {
 			const userInfo = {
 				avatarUrl,
@@ -116,13 +129,17 @@ Page({
 				content: '未知错误, 请重试!',
 			});
 		}
+
+		this.setData({
+			submited: false
+		});
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-		
+
 	},
 
 	/**

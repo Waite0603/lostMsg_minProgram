@@ -1,9 +1,7 @@
 <view class="body">
-	<view class="unlogin" wx:if="{{ !login }}">
-		<image class="unlogin-image" src="../../images/me.png" mode="" />
-		<button class="unlogin-btn" hover-class="unlogin-btn-active" bindtap="getUserProfile"> 获取头像昵称 </button>
-	</view>
-	<view class="login" wx:else="">
+	<no-login wx:if="{{ !login }}">
+	</no-login>
+	<view class="login" wx:else>
 		<view class="info">
 			<image src="{{ userInfo.avatarUrl }}" class="avatar-iamge"></image>
 			<text class="nickname">{{ userInfo.nickName }}</text>

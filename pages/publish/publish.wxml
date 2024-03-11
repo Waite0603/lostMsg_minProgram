@@ -2,7 +2,11 @@
 	失物招领
 </view>
 
-<view class="body">
+<no-login wx:if="{{ !login }}"></no-login>
+
+
+
+<view class="body" wx:else>
 	<view class="tab">
 		<view class="tab-item" bind:tap="toSearch">
 			<view class="tab-item-right">

@@ -1,0 +1,4 @@
+<view class="unlogin">
+	<image class="unlogin-image" src="../../images/me.png" mode="" />
+	<button class="unlogin-btn" hover-class="unlogin-btn-active" bindtap="toLogin"> 点击登录 </button>
+</view>

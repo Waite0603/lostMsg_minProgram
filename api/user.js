@@ -11,3 +11,12 @@ export const register = ( data ) => {
     method: 'POST',
   })
 };
+
+export const login = ( data ) => {
+	console.log(data);
+	return request({
+    url: '/toLogin',
+    data: data,
+    method: 'POST',
+  })
+};

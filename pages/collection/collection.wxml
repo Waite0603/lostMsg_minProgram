@@ -1,4 +1,6 @@
-<view class="body">
+<no-login wx:if="{{ !login }}"></no-login>
+
+<view class="body" wx:else>
 	<t-tabs defaultValue="{{0}}" theme="tag" space-evenly="{{false}}" class="tab" bind:change="changeTab">
 		<t-tab-panel wx:for="{{tabList}}" wx:key="index" label="{{item}}" value="{{index}}" />
 	</t-tabs>

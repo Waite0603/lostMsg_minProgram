@@ -1,5 +1,6 @@
 {
 	"usingComponents": {
+		"no-login": "../../components/noLogin/noLogin",
 		"view-card": "../../components/ViewCard/ViewCard",
 		"footer-content": "../../components/FooterContent/FooterContent",
 		"t-tabs": "tdesign-miniprogram/tabs/tabs",

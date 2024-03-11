@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+		login: false,
 		newMessage: [
 			"文件上传组件上传异常",
 			"文件上传组件上传异常",
@@ -27,7 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+		const login = wx.getStorageSync("login");
+		this.setData({
+			login: !!login
+		});
   },
 
   /**

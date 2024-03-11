@@ -34,29 +34,29 @@ Page({
 	},
 
 	// 调用登录接口
-	getUserProfile(e) {
-		wx.getUserProfile({
-			desc: "登录", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-			success: (res) => {
-				const { userInfo: { avatarUrl, nickName } } = res;
-				const userInfo = {
-					avatarUrl,
-					nickName
-				};
-				wx.setStorageSync("userInfo", userInfo);
-				// 以下应该调用后端接口返回唯一 openid 这里省略了
-				wx.setStorageSync('openId', nickName);
-				wx.setStorageSync("login", true);
-				this.setData({
-					login: true,
-					userInfo: {
-						avatarUrl,
-						nickName
-					}
-				});
-			}
-		})
-	},
+	// getUserProfile(e) {
+	// 	wx.getUserProfile({
+	// 		desc: "登录", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+	// 		success: (res) => {
+	// 			const { userInfo: { avatarUrl, nickName } } = res;
+	// 			const userInfo = {
+	// 				avatarUrl,
+	// 				nickName
+	// 			};
+	// 			wx.setStorageSync("userInfo", userInfo);
+	// 			// 以下应该调用后端接口返回唯一 openid 这里省略了
+	// 			wx.setStorageSync('openId', nickName);
+	// 			wx.setStorageSync("login", true);
+	// 			this.setData({
+	// 				login: true,
+	// 				userInfo: {
+	// 					avatarUrl,
+	// 					nickName
+	// 				}
+	// 			});
+	// 		}
+	// 	})
+	// },
 
 	toCell(e) {
 		const { page } = e.currentTarget.dataset;

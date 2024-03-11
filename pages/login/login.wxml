@@ -1,3 +1,5 @@
+<t-message id="t-message" />
+
 <view class="body">
 	<view class="title">
 		<text class="welcome">登录 </text>
@@ -6,10 +8,10 @@
 	<text class="title-msg">欢迎来到失物招领小程序, 请使用账号密码登录</text>
 
 	<view class="from">
-		<input class="from-item" type="text" placeholder="请输入账号" />
-		<input class="from-item" type="password" placeholder="请输入密码" />
+		<input class="from-item" type="text" placeholder="请输入账号" bindinput="getUserName" />
+		<input class="from-item" type="password" placeholder="请输入密码" bindinput="getPassword" />
 
-		<button class="btn-login" hover-class="btn-login-hover">确定</button>
+		<button class="btn-login" hover-class="btn-login-hover" bind:tap="handLogin">登录</button>
 
 		<navigator url="/pages/register/register" class="navigator" hover-class="navigator-hover">没有账号?点击注册</navigator>
 	</view>

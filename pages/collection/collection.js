@@ -11,6 +11,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		login: false,
 		tabList: ['找主人', '寻物品'],
 		listImage: [],
 		tabSelect: 0
@@ -58,6 +59,10 @@ Page({
 	 */
 	onLoad(options) {
 		this.getCollectLoseDataList(this.data.tabSelect);
+		const login = wx.getStorageSync("login");
+		this.setData({
+			login: !!login
+		});
 	},
 
 	/**

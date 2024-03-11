@@ -5,7 +5,7 @@
 	--td-tab-item-active-color: #fff;
 }
 
-page {
+.body {
 	padding: 10rpx;
 	padding-bottom: 140rpx;
 	box-sizing: border-box;
