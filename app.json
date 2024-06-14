@@ -15,7 +15,8 @@
     "pages/publishLost/publishLost",
     "pages/classifyDetail/classifyDetail",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/about/about"
   ],
   "tabBar": {
     "custom": true,
@@ -49,12 +50,13 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "失物招领",
-    "navigationBarBackgroundColor": "#B2A4EC"
+		"navigationBarBackgroundColor": "#B2A4EC",
+		"enablePullDownRefresh": true
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-	"lazyCodeLoading": "requiredComponents",
-	"useExtendedLib": {
+  "lazyCodeLoading": "requiredComponents",
+  "useExtendedLib": {
     "weui": true
   }
 }

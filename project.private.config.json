@@ -6,10 +6,17 @@
     "bigPackageSizeSupport": true,
     "urlCheck": false
   },
-  "libVersion": "3.3.0",
+  "libVersion": "3.2.5",
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/login/login",
           "pathName": "pages/login/login",

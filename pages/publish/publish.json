@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-		"no-login": "../../components/noLogin/noLogin"
+		"no-login": "../../components/noLogin/noLogin",
+		"t-swiper": "tdesign-miniprogram/swiper/swiper"
 	}
 }

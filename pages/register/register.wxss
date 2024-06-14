@@ -88,13 +88,16 @@ page {
   color:#B2A4EC;
 }
 
+.wave-media {
+	margin-top: auto;
+}
+
 .wave {
   position: relative;
   align-items: center;
   height: 300rpx;
   background-color: #B2A4EC;
   overflow: hidden;
-  margin-top: auto;
 }
 
 .wave view {

@@ -62,6 +62,10 @@ page {
   color:#B2A4EC;
 }
 
+.wave-media {
+	margin-top: auto;
+}
+
 .wave {
   position: relative;
   align-items: center;

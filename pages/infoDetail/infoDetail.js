@@ -1,4 +1,4 @@
-import Message from "tdesign-miniprogram/message/index";
+import Message from 'tdesign-miniprogram/message/index';
 import {
 	collectItem, cancelCollection, checkCollection
 } from "../../api/lose";
@@ -11,29 +11,37 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		login: false,
 		dataArr: {},
 		collected: false
 	},
 
 	// 点击联系我事件
 	onContactTap() {
+		if (!this.data.login) {
+			wx.navigateTo({
+				url: "../login/login"
+			});
+
+			return;
+		};
+
+
 		wx.setClipboardData({
-			data: this.data.dataArr.phone.toString(),
-			success(res) {
-				// 禁用系统默认弹窗
-				wx.hideToast();
-				Message.success({
-					context: this,
-					offset: [20, 32],
-					duration: 5000,
-					content: '联系方式复制成功',
-				});
-			}
-		})
+			data: this.data.dataArr.phone.toString()
+		});
 	},
 
 	// 收藏功能
 	onCollectionTap() {
+		if (!this.data.login) {
+			wx.navigateTo({
+				url: "../login/login"
+			});
+
+			return;
+		};
+
 		if (!this.data.collected) {
 			collectItem(this.data.dataArr.id, openId);
 		} else {
@@ -48,6 +56,11 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	async onLoad(options) {
+		const login = wx.getStorageSync("login");
+		this.setData({
+			login: !!login
+		});
+
 		let opt = JSON.parse(options.data);
 		const res = await checkCollection(opt.id, openId);
 		if (res.data.length !== 0) {

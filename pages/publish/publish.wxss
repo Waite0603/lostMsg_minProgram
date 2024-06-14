@@ -58,7 +58,7 @@
 }
 
 .new-message {
-	padding: 30rpx;
+	padding: 0 30rpx;
 	font-size: 36rpx;
 }
 
@@ -98,4 +98,8 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.swiper {
+	margin: 30rpx;
 }

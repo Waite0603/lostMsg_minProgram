@@ -10,6 +10,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		choosedAvatar: false,
 		avatarUrl: defaultAvatarUrl,
 		nickName: "",
 		userName: "",
@@ -22,6 +23,7 @@ Page({
 		const { avatarUrl } = e.detail;
 		this.setData({
 			avatarUrl,
+			choosedAvatar: true
 		});
 	},
 

@@ -15,14 +15,13 @@
 
 		<navigator url="/pages/register/register" class="navigator" hover-class="navigator-hover">没有账号?点击注册</navigator>
 	</view>
-
-  <view class="wave">
-    <view class="wave-before"></view>
-    <view class="wave-after"></view>
-  </view>
 	
-	<view class="wave-fill"></view>
+	<match-media min-width="300" max-width="600" class="wave-media">
+		<view class="wave">
+			<view class="wave-before"></view>
+			<view class="wave-after"></view>
+		</view>
 
-
-
+		<view class="wave-fill"></view>
+	</match-media>
 </view>

@@ -1,7 +1,7 @@
 <t-message id="t-message"></t-message>
 
 <view class="content">
-	<image class="lose-img" src="{{ dataArr.url }}" mode="widthFix" />
+	<image class="lose-img" src="{{ dataArr.url }}" mode="widthFix" show-menu-by-longpress />
 
 	<view class="container">
 		<view class="title">

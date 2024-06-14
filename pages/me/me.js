@@ -27,6 +27,11 @@ Page({
 				src: "../myInfo/myInfo"
 			},
 			{
+				url: "../../images/me_fill.png",
+				text: "关于我们",
+				src: "../about/about"
+			},
+			{
 				url: "../../images/quit.png",
 				text: "退出登录"
 			}
@@ -82,6 +87,9 @@ Page({
 					if (res.confirm) {
 						wx.removeStorage({
 							key: 'userInfo',
+						});
+						wx.removeStorage({
+							key: 'openId',
 						});
 						wx.setStorageSync('login', false);
 					};

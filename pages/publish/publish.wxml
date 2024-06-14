@@ -10,7 +10,7 @@
 	<view class="tab">
 		<view class="tab-item" bind:tap="toSearch">
 			<view class="tab-item-right">
-				<image class="icon" src="../../images/publish.png" mode=""/>
+				<image class="icon" src="../../images/publish.png" mode="" />
 			</view>
 			<view class="tab-item-left">
 				<text>寻物启事</text>
@@ -19,7 +19,7 @@
 		</view>
 		<view class="tab-item" bind:tap="toLost">
 			<view class="tab-item-right">
-				<image class="icon" src="../../images/classify_fill.png" mode=""/>
+				<image class="icon" src="../../images/classify_fill.png" mode="" />
 			</view>
 			<view class="tab-item-left">
 				<text>失物招领</text>
@@ -28,14 +28,17 @@
 		</view>
 	</view>
 
+<t-swiper current="{{current}}" autoplay navigation="{{ { type: 'dots' } }}" list="{{swiperList}}" class="swiper">
+</t-swiper>
+
 	<view class="new-message">
 		<view class="title">
-		<image class="icon" src="../../images/collection1_fill.png" mode=""/>
+			<image class="icon" src="../../images/collection1_fill.png" mode="" />
 			最新通告
 		</view>
 		<view class="message">
 			<view class="message-item" wx:for="{{ newMessage }}" wx:key="newMessage">
-				<image class="icon" src="../../images/collection1_fill.png" mode=""/>
+				<image class="icon" src="../../images/collection1_fill.png" mode="" />
 				<text class="msg">{{ item }}</text>
 			</view>
 		</view>
